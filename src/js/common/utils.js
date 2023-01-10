@@ -1,7 +1,13 @@
 export function secondToTime(second) {
     const hour = Math.floor(second / 3600);
     const min = Math.floor((second - hour * 3600) / 60);
-    return `${hour ? hour + '小时' : ''}${min}分钟`;
+    return `${hour ? hour + 'h ' : ''}${min}min `;
+}
+
+export function secondToHoursMinutes(second) {
+    const hours = Math.floor(second / 3600);
+    const minutes = Math.floor((second - hours * 3600) / 60);
+    return { hours, minutes };
 }
 
 const iframe = document.querySelector('#sandbox');
